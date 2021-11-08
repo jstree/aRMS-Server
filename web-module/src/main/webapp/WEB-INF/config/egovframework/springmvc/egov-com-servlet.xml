@@ -10,7 +10,7 @@
 	<mvc:annotation-driven />
 
 	<context:annotation-config />
-	<context:component-scan base-package="egovframework, com.atlassian">
+	<context:component-scan base-package="egovframework, com">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service" />
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository" />
@@ -66,7 +66,6 @@
 				<prop key="egovframework.rte.fdl.cmmn.exception.EgovBizException">egovframework/com/cmm/error/egovBizException</prop>
 				<prop key="org.springframework.web.HttpSessionRequiredException">egovframework/com/cmm/error/EgovLoginUsr</prop>
 				<prop key="egovframework.com.cmm.exception.EgovXssException">egovframework/com/cmm/error/EgovXssException</prop>
-				<prop key="egovframework.com.ext.jstree.support.security.exception.UserAlreadyExistAuthenticationException">egovframework/com/cmm/error/UserAlreadyExistError</prop>
 			</props>
 		</property>
 	</bean>
@@ -81,7 +80,6 @@
 		<property name="objectMapper" ref="jsonMapper" />
 	</bean>
 
-	<!-- ************************************* socialSecurity ************************************* -->
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 		<property name="messageConverters">
 			<list>
